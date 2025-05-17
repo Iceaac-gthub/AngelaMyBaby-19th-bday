@@ -1,0 +1,382 @@
+:root {
+    --primary-color: #FFB7C5; /* Cherry Blossom Pink */
+    --secondary-color: #FFF0F5; /* Lighter Pink (Lavender Blush) */
+    --accent-color: #FF69B4; /* Hot Pink for accents */
+    --text-color: #4A4A4A; /* Dark Grey for text */
+    --main-font: 'Quicksand', sans-serif; 
+    --border-color: #4A4A4A; 
+}
+
+body {
+    font-family: var(--main-font); 
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden; 
+    font-weight: 400; 
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; 
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.screen.active {
+    display: flex;
+}
+
+h1, h2 {
+    color: var(--accent-color);
+    text-shadow: 1px 1px var(--secondary-color);
+    font-weight: 500; 
+}
+h1.greeting {
+    font-weight: 700; 
+    font-size: 1.6em; 
+    line-height: 1.3;
+}
+
+/* Passcode Screen */
+#passcode-screen .greeting {
+    margin-bottom: 15px;
+}
+#passcode-screen h2 {
+    margin-bottom: 15px;
+}
+
+#passcode-display-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; 
+}
+
+.passcode-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    margin: 0 8px;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+.passcode-dot.filled {
+    background-color: var(--accent-color);
+}
+
+
+.clue {
+    font-size: 0.9em;
+    color: var(--text-color);
+    font-weight: 300; 
+    margin-bottom: 15px; 
+}
+
+#passcode-error {
+    min-height: 1.2em; 
+    margin-bottom: 10px;
+}
+
+
+#numpad-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 280px; 
+    margin-top: 10px;
+}
+
+.numpad-button {
+    font-family: var(--main-font);
+    font-size: 1.8em; 
+    font-weight: 400;
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: 1px solid rgba(255,105,180,0.5); 
+    border-radius: 50%; 
+    width: 70px; 
+    height: 70px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    user-select: none; 
+    -webkit-tap-highlight-color: transparent; 
+}
+.numpad-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.numpad-button:active {
+    background-color: var(--secondary-color);
+    transform: scale(0.95);
+}
+.numpad-button.numpad-empty { 
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    pointer-events: none; 
+}
+.numpad-button.numpad-backspace {
+    font-size: 1.5em; 
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+#passcode-display-container.shake .passcode-dot {
+  border-color: red; 
+}
+#passcode-display-container.shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+/* Buttons - styled-button */
+.styled-button {
+    font-family: var(--main-font); 
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 2px solid var(--border-color); 
+    padding: 15px 25px;
+    font-size: 1.2em;
+    font-weight: 500; 
+    text-decoration: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px; 
+    box-shadow: 3px 3px 0px var(--border-color); 
+    transition: transform 0.1s, box-shadow 0.1s;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.styled-button:hover {
+    transform: translate(1px, 1px); 
+    box-shadow: 2px 2px 0px var(--border-color);
+    background-color: #fde7ef; 
+}
+
+.styled-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
+.return-button {
+    margin-top: 30px;
+    font-size: 1em;
+    padding: 10px 20px;
+    min-width: 150px;
+}
+
+/* Flowers Screen - Static Image Container */
+#flowers-screen {
+    justify-content: space-around; 
+}
+.tulip-bouquet-container { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#my-flower-photo { 
+  max-width: 90%; 
+  max-height: 350px; 
+  height: auto; 
+  border: 5px solid var(--secondary-color); 
+  border-radius: 15px; 
+  box-shadow: 0 0 15px var(--accent-color); 
+}
+
+
+/* Letter Screen */
+.scroll-paper {
+    background-color: #FFF8DC; 
+    border: 10px solid transparent;
+    border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E.s%7Bstroke:%23D2B48C;stroke-width:2;fill:%23FFF8DC%7D%3C/style%3E%3Crect x='5' y='5' width='90' height='90' class='s' rx='10'/%3E%3C/svg%3E") 15 stretch;
+    padding: 30px;
+    width: 90%;
+    max-width: 350px;
+    min-height: 300px; /* Can be adjusted if needed */
+    max-height: 70vh; /* Ensure it doesn't take too much vertical space, adjust as needed */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    overflow-y: auto; 
+    text-align: left;
+    font-size: 1.1em; 
+    line-height: 1.7; 
+    color: #5C4033; 
+    font-weight: 400; 
+}
+.scroll-paper p {
+    margin-bottom: 1em;
+}
+
+.letter-gif {
+    display: block; /* To allow margin auto to work for centering */
+    max-width: 60%; /* Adjust for a nice size within the letter */
+    height: auto;
+    margin: 25px auto 10px auto; /* Top, auto left/right for center, bottom */
+    border-radius: 10px; /* Optional: if you want rounded corners for the GIF */
+}
+
+
+/* Spotify Screen */
+#spotify-screen h2 {
+    margin-bottom: 20px;
+}
+.song-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.song-card {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--border-color); 
+    border-radius: 12px; 
+    padding: 15px; 
+    margin-bottom: 15px;
+    width: 90%;
+    max-width: 320px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1); 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.song-card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0px 6px 10px rgba(var(--accent-color-rgb, 255,105,180),0.3); 
+}
+.song-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px; 
+    margin-right: 15px; 
+    border: 1px solid var(--border-color);
+}
+.song-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    font-weight: 500; 
+    color: var(--text-color);
+}
+.song-info p {
+    margin: 0;
+    font-size: 0.85em; 
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+/* Song Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6); 
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: auto;
+    padding: 30px;
+    border: none; 
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2); 
+    width: 85%; 
+    max-width: 360px; 
+    border-radius: 15px; 
+    text-align: center;
+    position: relative; 
+}
+.modal-content img.album-art-modal {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px; 
+    margin-bottom: 15px;
+}
+.modal-content p.quote {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--text-color);
+    font-weight: 400;
+}
+.close-button {
+    position: absolute;
+    top: 15px; 
+    right: 15px; 
+    font-size: 2em;
+    font-weight: 700; 
+    color: var(--border-color);
+    cursor: pointer;
+    line-height: 1; 
+}
+.close-button:hover {
+    color: var(--accent-color);
+}
+
+/* Final Surprise Overlay */
+.final-surprise-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9998; 
+    flex-direction: column;
+}
+.final-surprise-content {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 15px; 
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+.final-surprise-content img { 
+    max-width: 150px;
+    border: 3px solid var(--primary-color); 
+    margin-bottom: 20px;
+}
+.final-surprise-content p {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    font-weight: 700; 
+}
+
+#confetti-canvas {
+    position:fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    pointer-events:none; 
+    z-index: 9999;
+}

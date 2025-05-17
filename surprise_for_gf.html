@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy bday baby!!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Passcode Screen -->
+  <div id="passcode-screen" class="screen active">
+    <h1 class="greeting">
+        Happy birthday, babyyy!!🥺🥺🥺💗💗💗💗
+    </h1>
+    <h2>Enter Passcode</h2>
+    <div id="passcode-display-container">
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+    </div>
+    <p class="clue">Clue: our anniv date (MM/DD)</p>
+    <p id="passcode-error" style="color: red; display: none;">Incorrect passcode. Try again!</p>
+    <div id="numpad-container">
+        <button class="numpad-button" data-value="1">1</button>
+        <button class="numpad-button" data-value="2">2</button>
+        <button class="numpad-button" data-value="3">3</button>
+        <button class="numpad-button" data-value="4">4</button>
+        <button class="numpad-button" data-value="5">5</button>
+        <button class="numpad-button" data-value="6">6</button>
+        <button class="numpad-button" data-value="7">7</button>
+        <button class="numpad-button" data-value="8">8</button>
+        <button class="numpad-button" data-value="9">9</button>
+        <button class="numpad-button numpad-empty"></button>
+        <button class="numpad-button" data-value="0">0</button>
+        <button class="numpad-button numpad-backspace" data-value="backspace">⌫</button>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div id="main-menu-screen" class="screen">
+    <h2>My gifts for you <3</h2>
+    <button class="styled-button" onclick="showScreen('flowers-screen')">💐 Flowers For You</button>
+    <button class="styled-button" onclick="showScreen('letter-screen')">💌 My Letter For You <3</button>
+    <button class="styled-button" onclick="showScreen('spotify-screen')">🎵 Songs that remind me of you <3</button>
+  </div>
+
+  <!-- Flowers Screen -->
+  <div id="flowers-screen" class="screen">
+    <h2>A Bouquet of Tulips For You!</h2>
+    <div class="tulip-bouquet-container">
+      <img src="flowers-for-u.png" alt="Me holding flowers for you!" id="my-flower-photo">
+    </div>
+    <p>Tulips, because they're your favorite (and here I am with some for you)!</p>
+    <button class="styled-button return-button" onclick="showScreen('main-menu-screen')">↩️ Back to Menu</button>
+  </div>
+
+  <!-- Letter Screen -->
+  <div id="letter-screen" class="screen">
+    <h2>My Letter for you, my baby <3</h2>
+    <div class="scroll-paper">
+      <p>HAAAAAPPPPYYYYY BIIIIRRRTTTHHHDAYYYYYYY BABYYYYYYYY!!! 🥺🥺🥺🥺🥺💗💗💗💗💗💗💗💗💗💗 Yes!! Happy dapat ang birthday mo!! Ako nagsabi omki? >:33 💗💗 pero happy birthday my love! My baby! My sweet cutiepie baby Angelaaaaa!!! 🥺🥺🥺🥺💗💗💗💗💗💗💗💗💗💗</p>
+      <p>I hope maging maganda yung 19th bday mo, hindi lang yung 19th bday mo but your year as a 19 year old girl 🥺🥺💗💗💗 baby, I know na marami nangyayari sa'yo baby :(( I know that your life has been full of downs lately. But I wish and I hope that this year, mas maging maganda ang mga nangyayari sa'yo. This year, sana mas maging okay ka, my baby. ☹️☹️💗💗💗</p>
+      <p>I'm here naman for you, okay? I'll be the shoulder you can cry on. I'll be the strength when you feel weak. I'll be here for you, baby. 🥺🥺☹️☹️💗💗💗💗</p>
+      <p>I really reallyyy wish na nandito ka or nandiyan ako para ma-hug kita nang sobrang higpit at masabi ko sa'yo in person kung gaano ka ka-special at ka-importante sa akin and kung gaano kita ka-mahal, my babyyyy :((( you have no idea how much I miss you right now, like every single minute, every single second, I'm wishing I could be there to spoil you and alagaan ka so much and make sure you have the most amazing, unforgettable birthday celebration ever!!! ☹️☹️☹️💗💗💗💗</p>
+      <p>but even though I can't be there physically, please know that my love for you and my wishes for u are flying over to you :3 I hope you feel cherished, loved, and adored, because you truly are, my baby Angela 🥺🥺🥺💗💗💗💗💗</p>
+      <p>I'm hoping na today, you get to relax, to enjoy, to rest (kasi u deserve it sobra ☹️) and siyempre, to eat lots of yummy foods and cake!! 🥺🥺💗💗💗 and to feel all the love not just from me but from everyone who cares about you, because you deserve every bit of happiness in this universe and more! :3 💗</p>
+      <p>This year, I'm manifesting for you a better life experience, more rest, improved health, less stress, and more moments that make your heart genuinely happy, kasi I like it when you're happy, my baby. Ang ganda ganda mo kasi when you're happy and when you smile. 🥺🥺💗💗💗💗</p>
+      <p>Remember always how incredibly strong, resilient, and amazing you are, baby, you've overcome so much already and I know you'll conquer whatever comes your way, and I'll be right here, your boyfie/hubby cheering you on louder than anyone else, always believing in you, my love, my life, my world, my everything, my baby. 🥺🥺🥺🥺💗💗💗💗💗💗</p>
+      <p>I love you more than words can say, babyy!! happy birthday again, my baby Angela!!! Mwaaah mwaaah mwaaah!!! 🥺🥺🥺💗💗💗💗💗💗</p>
+      <img src="bear-kiss-bear-kisses.gif" alt="Bear Kisses" class="letter-gif">
+    </div>
+    <button class="styled-button return-button" onclick="showScreen('main-menu-screen')">↩️ Back to Menu</button>
+  </div>
+
+  <!-- Spotify Screen -->
+  <div id="spotify-screen" class="screen">
+    <h2>Songs That Remind Me Of You</h2>
+    <div class="song-list" id="song-list-container">
+        <!-- Songs will be dynamically added here by JavaScript -->
+    </div>
+    <button class="styled-button return-button" onclick="returnFromSpotify()">↩️ Back to Menu</button>
+  </div>
+
+  <!-- Song Modal -->
+  <div id="song-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeSongModal()">×</span>
+      <img src="" alt="Album Art" class="album-art-modal" id="modal-album-art"/>
+      <h3 id="modal-song-title"></h3>
+      <p class="quote" id="modal-song-quote"></p>
+      <a href="#" id="modal-spotify-link" class="styled-button" target="_blank">Listen on Spotify</a>
+    </div>
+  </div>
+
+  <!-- Final Surprise -->
+  <div id="final-surprise-overlay" class="final-surprise-overlay">
+    <div class="final-surprise-content">
+      <img src="snowflake.png" alt="Snowflake the cat" id="cat-image"/>
+      <p>Happy birthday mommi! :3</p>
+      <button class="styled-button" onclick="closeFinalSurprise()">Aww, thanks!</button>
+    </div>
+  </div>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
